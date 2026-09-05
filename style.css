@@ -1,0 +1,243 @@
+
+:root {
+    --bt-purple: #7B2CBF;
+    --bt-purple-dark: #56208A;
+    --bt-yellow: #FFD429;
+    --bt-yellow-light: #FFE76B;
+    --bt-black: #111111;
+    --bt-white: #FFFFFF;
+    --bt-gray: #F5F5F7;
+    --bt-gray-dark: #666666;
+    --bt-border: #E6E6E6;
+    --bt-green: #1F9D55;
+    --bt-red: #D64545;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(123, 44, 191, 0.10),
+            rgba(255, 212, 41, 0.12)
+        ),
+        var(--bt-gray);
+    color: var(--bt-black);
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2 {
+    color: var(--bt-purple-dark);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.header h1 {
+    margin-bottom: 8px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    margin-bottom: 0;
+    color: var(--bt-gray-dark);
+    font-size: 0.95rem;
+}
+
+.brand-badge {
+    display: inline-block;
+    background: var(--bt-yellow);
+    color: var(--bt-black);
+    font-weight: 800;
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+#reader,
+#result {
+    width: 100%;
+    background: var(--bt-white);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--bt-border);
+}
+
+#reader {
+    overflow: hidden;
+    padding: 14px;
+    margin-bottom: 20px;
+}
+
+#reader video {
+    width: 100% !important;
+    border-radius: 12px;
+}
+
+#reader img {
+    max-width: 100%;
+}
+
+#reader button {
+    border: none;
+    background: var(--bt-purple);
+    color: var(--bt-white);
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#reader button:hover {
+    background: var(--bt-purple-dark);
+}
+
+#reader select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 8px;
+    border: 1px solid var(--bt-border);
+    border-radius: 10px;
+    background: var(--bt-white);
+    color: var(--bt-black);
+}
+
+#result {
+    display: none;
+    padding: 22px;
+}
+
+#resultStatus {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+.valid {
+    color: var(--bt-green);
+    background: rgba(31, 157, 85, 0.10);
+    border: 1px solid rgba(31, 157, 85, 0.25);
+}
+
+.invalid {
+    color: var(--bt-red);
+    background: rgba(214, 69, 69, 0.10);
+    border: 1px solid rgba(214, 69, 69, 0.25);
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--bt-border);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 700;
+    color: var(--bt-gray-dark);
+    flex: 0 0 40%;
+}
+
+.info-value {
+    font-weight: 700;
+    color: var(--bt-black);
+    text-align: right;
+    word-break: break-word;
+}
+
+#employeeId,
+#employeeName,
+#employeePlatform,
+#employeeDepartment,
+#employeeStatus {
+    font-weight: 700;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--bt-gray-dark);
+    font-size: 0.8rem;
+}
+
+.accent-line {
+    width: 70px;
+    height: 5px;
+    background: var(--bt-yellow);
+    border-radius: 999px;
+    margin: 0 auto 18px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 14px;
+    }
+
+    .header h1 {
+        font-size: 1.6rem;
+    }
+
+    #reader,
+    #result {
+        border-radius: 14px;
+    }
+
+    #result {
+        padding: 18px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .info-label,
+    .info-value {
+        width: 100%;
+        flex: none;
+        text-align: left;
+    }
+}
